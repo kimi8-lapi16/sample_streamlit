@@ -10,6 +10,3 @@
   1. VSCodeでこのリポジトリを開いて、`reopen in container`を実行(dockerも立ち上げておく)
   2. devcontainerで開けたら、 ターミナルで`streamlit run app/main.py --server.address=0.0.0.0`を実行
   3. ローカルのアプリが http://localhost:8501/ で起動
-
-## サンプルデータ作成
-  - `python srcipts/generate_sample.py` で適当なcsvファイルが作れます

@@ -10,7 +10,7 @@ st.header("CSV アップロード")
 uploaded_file = st.file_uploader("CSVファイルをアップロードしてください", type=["csv"])
 
 if uploaded_file is not None:
-    df = pd.read_csv(uploaded_file)
+    df = pd.read_csv(uploaded_file, encoding="utf-8")
     st.subheader("📄 データプレビュー")
     st.dataframe(df.head())
 
@@ -41,5 +41,5 @@ if st.button("CSVを生成"):
     df = generate_sample_csv(rows)
     st.dataframe(df)
 
-    csv = df.to_csv(index=False).encode("utf-8")
+    csv = df.to_csv(index=False, encoding="utf-8").encode("utf-8")
     st.download_button("📥 CSVをダウンロード", csv, "sample.csv", "text/csv")
